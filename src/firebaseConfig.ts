@@ -4,14 +4,15 @@ import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB0OQWrhgeX4rtIt0byXPCKFQfP3DHs2Mk",
-  authDomain: "horta-inteligente-b7351.firebaseapp.com",
-  projectId: "horta-inteligente-b7351",
-  storageBucket: "horta-inteligente-b7351.firebasestorage.app",
-  messagingSenderId: "999271842930",
-  appId: "1:999271842930:web:8d6aa8dd581ecbfcd2eeeb"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase
