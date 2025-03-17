@@ -5,6 +5,7 @@ import { ChartData, GraficConditionsProps } from "../interfaces/interfaces";
 
 import {
   Chart as ChartJS,
+  LineController,
   LineElement,
   PointElement,
   CategoryScale,
@@ -12,7 +13,9 @@ import {
   Tooltip,
   Title,
   Legend,
+  BarController,
   BarElement,
+
 } from "chart.js";
 
 ChartJS.register(
