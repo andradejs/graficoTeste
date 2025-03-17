@@ -13,16 +13,17 @@ import {
   Tooltip,
   Title,
   Legend,
-  BarController,
   BarElement,
-
+  BarController,
 } from "chart.js";
 
 ChartJS.register(
   CategoryScale,
   LinearScale,
   LineElement,
+  LineController,
   BarElement,
+  BarController,
   PointElement,
   Tooltip,
   Title,
