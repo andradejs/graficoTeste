@@ -41,16 +41,6 @@ function GraficConditions(props: GraficConditionsProps) {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const humidityBefore = await gethumidityBeforeAction();
-      // const date = await getDateAction();
-      // console.log(date);
-      // const humidityAfter = await gethumidityAfterAction();
-      // console.log(humidityAfter);
-      // const temperatureBefore = await getTemperatureBeforeAction();
-      // const temperatureAfter = await getTemperatureAfterAction();
-      // const soilMoistureBefore = await getSoilMoistureBeforeAction();
-      // const soilMoistureAfter = await getSoilMoistureAfterAction();
-      // const waterUsage = [10, 20, 15, 25, 18]; // Exemplo de dados de consumo de água
 
       setChartData({
         labels: props.date,
@@ -74,48 +64,6 @@ function GraficConditions(props: GraficConditionsProps) {
             },
           ]
         :[]),
-        
-          // {
-          //   type: 'bar',
-          //   label: "Consumo de água",
-          //   data: waterUsage,
-          //   backgroundColor: "#3ddbd0",
-          //   borderColor: "red",
-
-          //   tension: 0.4
-          // },
-          // {
-          //   type: 'line',
-          //   label: "Temperatura antes da irrigação em °C",
-          //   data: temperatureBefore,
-          //   borderColor: "#FFD280",
-          //   backgroundColor: "#FFD280",
-          //   tension: 0.4,
-          // },
-          // {
-          //   type: 'line',
-          //   label: "Temperatura depois da irrigação em °C",
-          //   data: temperatureAfter,
-          //   borderColor: "#e78906",
-          //   backgroundColor: "#e78906",
-          //   tension: 0.4,
-          // },
-          // {
-          //   type: 'line',
-          //   label: "Umidade do solo antes da irrigação em %",
-          //   data: soilMoistureBefore,
-          //   borderColor: "#06aFFF",
-          //   backgroundColor: "#06aFFF",
-          //   tension: 0.4,
-          // },
-          // {
-          //   type: 'line',
-          //   label: "Umidade do solo depois da irrigação em %",
-          //   data: soilMoistureAfter,
-          //   borderColor: "#0080ff",
-          //   backgroundColor: "#0080ff",
-          //   tension: 0.4,
-          // },
         ],
       });
     };
@@ -136,8 +84,8 @@ function GraficConditions(props: GraficConditionsProps) {
     <div>
       <h2>{props.title}</h2>
       <Chart
-        width={500}
-        height={400}
+        // width={500}
+        // height={400}
         type="line"
         data={chartData}
         options={{
