@@ -34,8 +34,6 @@ ChartJS.register(
 
 
 function GraficConditions(props: GraficConditionsProps) {
-
-  const [zoomEnabled, setZoomEnabled] = useState(false);
   const [chartData, setChartData] = useState<ChartData>({
     labels: [],
     datasets: [],
@@ -83,12 +81,8 @@ function GraficConditions(props: GraficConditionsProps) {
     props.type
   ]);
 
-  
   return (
-    <div 
-    onTouchStart={() => setZoomEnabled(true)}
-    onTouchEnd={() => setZoomEnabled(false)}
-    >
+    <div >
       <h2>{props.title}</h2>
       <Chart
         width={500}
@@ -100,7 +94,7 @@ function GraficConditions(props: GraficConditionsProps) {
           plugins: {
             zoom: {
               pan: {
-                enabled: true,
+                enabled: !isMobile,
                 mode: 'x', // Permite arrastar na horizontal
               },
               zoom: {
@@ -108,7 +102,7 @@ function GraficConditions(props: GraficConditionsProps) {
                   enabled: !isMobile, // Zoom ao rolar o mouse
                 },
                 pinch: {
-                  enabled: true, // Zoom ao usar gesto de pinça (touch)
+                  enabled: !isMobile, // Zoom ao usar gesto de pinça (touch)
                 },
                 mode: 'x', // Zoom apenas no eixo X
               },
