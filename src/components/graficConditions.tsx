@@ -98,9 +98,9 @@ function GraficConditions(props: GraficConditionsProps) {
               },
               zoom: {
                 wheel: {
-                  enabled: true, // Zoom ao rolar o mouse
+                  enabled: false, // Zoom ao rolar o mouse
                 },
-                pinch: {
+                pinch: {  
                   enabled: true, // Zoom ao usar gesto de pinça (touch)
                 },
                 mode: 'x', // Zoom apenas no eixo X
