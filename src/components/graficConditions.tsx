@@ -84,8 +84,8 @@ function GraficConditions(props: GraficConditionsProps) {
     <div>
       <h2>{props.title}</h2>
       <Chart
-        // width={500}
-        // height={400}
+        width={500}
+        height={400}
         type="line"
         data={chartData}
         options={{
