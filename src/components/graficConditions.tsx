@@ -34,11 +34,14 @@ ChartJS.register(
 
 
 function GraficConditions(props: GraficConditionsProps) {
+
+  const [zoomEnabled, setZoomEnabled] = useState(false);
   const [chartData, setChartData] = useState<ChartData>({
     labels: [],
     datasets: [],
   });
 
+  const isMobile = window.innerWidth <= 768; 
   useEffect(() => {
     const fetchData = async () => {
 
@@ -80,8 +83,12 @@ function GraficConditions(props: GraficConditionsProps) {
     props.type
   ]);
 
+  
   return (
-    <div>
+    <div 
+    onTouchStart={() => setZoomEnabled(true)}
+    onTouchEnd={() => setZoomEnabled(false)}
+    >
       <h2>{props.title}</h2>
       <Chart
         width={500}
@@ -98,9 +105,9 @@ function GraficConditions(props: GraficConditionsProps) {
               },
               zoom: {
                 wheel: {
-                  enabled: false, // Zoom ao rolar o mouse
+                  enabled: !isMobile, // Zoom ao rolar o mouse
                 },
-                pinch: {  
+                pinch: {
                   enabled: true, // Zoom ao usar gesto de pinça (touch)
                 },
                 mode: 'x', // Zoom apenas no eixo X
